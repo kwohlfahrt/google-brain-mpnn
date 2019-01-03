@@ -7,4 +7,8 @@ buildPythonPackage rec {
   src = ./.;
 
   propagatedBuildInputs = [ numpy tensorflow ];
+  checkPhase = ''
+    python3 mpnn_test.py
+    python3 set2vec_test.py
+  '';
 }
